@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 420" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070b14"/>
+      <stop offset="100%" stop-color="#0a1220"/>
+    </linearGradient>
+
+    <linearGradient id="cyanLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F0FF"/>
+      <stop offset="100%" stop-color="#7000FF"/>
+    </linearGradient>
+
+    <linearGradient id="pinkLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF007F"/>
+      <stop offset="100%" stop-color="#FF9900"/>
+    </linearGradient>
+
+    <filter id="cBloom" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <style>
+      @keyframes pulseNode {
+        0%, 100% { r: 6; opacity: 1; }
+        50% { r: 9; opacity: 0.6; }
+      }
+      @keyframes streamFlow {
+        0% { stroke-dashoffset: 400; }
+        100% { stroke-dashoffset: 0; }
+      }
+      .node-core {
+        animation: pulseNode 3s ease-in-out infinite;
+      }
+      .bus-pulse {
+        stroke-dasharray: 20 80;
+        animation: streamFlow 4s linear infinite;
+      }
+      .mono {
+        font-family: 'Fira Code', 'Courier New', monospace;
+      }
+    </style>
+  </defs>
+
+  <!-- Frame -->
+  <rect width="950" height="420" rx="10" fill="url(#cBg)" stroke="#17243b" stroke-width="1.5"/>
+
+  <!-- Background Constellation Traces -->
+  <g opacity="0.3" stroke="#1c304d" stroke-width="1">
+    <line x1="120" y1="60" x2="830" y2="60"/>
+    <line x1="120" y1="360" x2="830" y2="360"/>
+    <line x1="475" y1="40" x2="475" y2="380"/>
+  </g>
+
+  <!-- BUS LINES (Active Power Paths) -->
+  <!-- Center to Sector 01 (Top-Left) -->
+  <path d="M 475 210 L 320 210 L 260 110 L 160 110" fill="none" stroke="#162e4a" stroke-width="2"/>
+  <path d="M 475 210 L 320 210 L 260 110 L 160 110" fill="none" stroke="#00F0FF" stroke-width="2" class="bus-pulse"/>
+
+  <!-- Center to Sector 02 (Bottom-Left) -->
+  <path d="M 475 210 L 320 210 L 260 310 L 160 310" fill="none" stroke="#162e4a" stroke-width="2"/>
+  <path d="M 475 210 L 320 210 L 260 310 L 160 310" fill="none" stroke="#00FF88" stroke-width="2" class="bus-pulse"/>
+
+  <!-- Center to Sector 03 (Top-Right) -->
+  <path d="M 475 210 L 630 210 L 690 110 L 790 110" fill="none" stroke="#162e4a" stroke-width="2"/>
+  <path d="M 475 210 L 630 210 L 690 110 L 790 110" fill="none" stroke="#FF007F" stroke-width="2" class="bus-pulse"/>
+
+  <!-- Center to Sector 04 (Bottom-Right) -->
+  <path d="M 475 210 L 630 210 L 690 310 L 790 310" fill="none" stroke="#162e4a" stroke-width="2"/>
+  <path d="M 475 210 L 630 210 L 690 310 L 790 310" fill="none" stroke="#FFB800" stroke-width="2" class="bus-pulse"/>
+
+  <!-- ==================== -->
+  <!-- CENTER CORE NEXUS    -->
+  <!-- ==================== -->
+  <g transform="translate(475, 210)">
+    <circle cx="0" cy="0" r="32" fill="#08101e" stroke="#00F0FF" stroke-width="2" filter="url(#cBloom)"/>
+    <circle cx="0" cy="0" r="22" fill="#0d182b" stroke="#7000FF" stroke-width="1.5"/>
+    <circle cx="0" cy="0" r="6" fill="#00F0FF" class="node-core"/>
+    <text y="-40" class="mono" font-size="12" font-weight="700" fill="#00F0FF" text-anchor="middle" letter-spacing="2">YASIR_NEXUS</text>
+    <text y="48" class="mono" font-size="9" fill="#587799" text-anchor="middle" letter-spacing="1">ROOT_DISPATCHER</text>
+  </g>
+
+  <!-- ============================================== -->
+  <!-- SECTOR 01: BROWSER PROTOCOLS (Top Left)         -->
+  <!-- ============================================== -->
+  <g transform="translate(130, 90)">
+    <rect x="-100" y="-35" width="220" height="70" rx="6" fill="#0b1322" stroke="#00F0FF" stroke-width="1.2"/>
+    <circle cx="-85" cy="0" r="5" fill="#00F0FF" filter="url(#cBloom)"/>
+    <text x="-70" y="-12" class="mono" font-size="11" font-weight="700" fill="#00F0FF">SECTOR // ALPHA</text>
+    <text x="-70" y="4" class="mono" font-size="9.5" font-weight="600" fill="#FFFFFF">Browser &amp; MV3 Protocols</text>
+    <text x="-70" y="20" class="mono" font-size="8" fill="#6788A8">WhatsappSpam • Jadu • MailMerge</text>
+  </g>
+
+  <!-- ============================================== -->
+  <!-- SECTOR 02: STEALTH & MOBILE (Bottom Left)      -->
+  <!-- ============================================== -->
+  <g transform="translate(130, 310)">
+    <rect x="-100" y="-35" width="220" height="70" rx="6" fill="#0b1322" stroke="#00FF88" stroke-width="1.2"/>
+    <circle cx="-85" cy="0" r="5" fill="#00FF88" filter="url(#cBloom)"/>
+    <text x="-70" y="-12" class="mono" font-size="11" font-weight="700" fill="#00FF88">SECTOR // BETA</text>
+    <text x="-70" y="4" class="mono" font-size="9.5" font-weight="600" fill="#FFFFFF">Stealth Mobile &amp; Jetpack</text>
+    <text x="-70" y="20" class="mono" font-size="8" fill="#6788A8">ChupChap • Woof • Hardware Triggers</text>
+  </g>
+
+  <!-- ============================================== -->
+  <!-- SECTOR 03: PLATFORMS & GRAPHS (Top Right)      -->
+  <!-- ============================================== -->
+  <g transform="translate(820, 90)">
+    <rect x="-120" y="-35" width="220" height="70" rx="6" fill="#0b1322" stroke="#FF007F" stroke-width="1.2"/>
+    <circle cx="-105" cy="0" r="5" fill="#FF007F" filter="url(#cBloom)"/>
+    <text x="-90" y="-12" class="mono" font-size="11" font-weight="700" fill="#FF007F">SECTOR // GAMMA</text>
+    <text x="-90" y="4" class="mono" font-size="9.5" font-weight="600" fill="#FFFFFF">Distributed Web &amp; Graphs</text>
+    <text x="-90" y="20" class="mono" font-size="8" fill="#6788A8">Jagha • Volia • iNotebook MERN</text>
+  </g>
+
+  <!-- ============================================== -->
+  <!-- SECTOR 04: LOW-LEVEL & CLI (Bottom Right)      -->
+  <!-- ============================================== -->
+  <g transform="translate(820, 310)">
+    <rect x="-120" y="-35" width="220" height="70" rx="6" fill="#0b1322" stroke="#FFB800" stroke-width="1.2"/>
+    <circle cx="-105" cy="0" r="5" fill="#FFB800" filter="url(#cBloom)"/>
+    <text x="-90" y="-12" class="mono" font-size="11" font-weight="700" fill="#FFB800">SECTOR // DELTA</text>
+    <text x="-90" y="4" class="mono" font-size="9.5" font-weight="600" fill="#FFFFFF">Low-Level, CLI &amp; Native</text>
+    <text x="-90" y="20" class="mono" font-size="8" fill="#6788A8">wacli_window (Go) • Soundboard (Rust)</text>
+  </g>
+</svg>

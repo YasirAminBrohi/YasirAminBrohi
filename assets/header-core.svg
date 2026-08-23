@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 250" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060911"/>
+      <stop offset="50%" stop-color="#0a101d"/>
+      <stop offset="100%" stop-color="#05080e"/>
+    </linearGradient>
+
+    <!-- Neon Cyan Gradient -->
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F0FF"/>
+      <stop offset="50%" stop-color="#7000FF"/>
+      <stop offset="100%" stop-color="#FF007F"/>
+    </linearGradient>
+
+    <!-- Signal Pulse Gradient -->
+    <linearGradient id="pulseGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F0FF" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#00F0FF" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#FF007F" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Grid Pattern -->
+    <pattern id="cyberGrid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#00F0FF" stroke-width="0.3" stroke-opacity="0.12"/>
+      <circle cx="0" cy="0" r="0.8" fill="#00F0FF" fill-opacity="0.3"/>
+    </pattern>
+
+    <style>
+      @keyframes scanline {
+        0% { transform: translateY(0px); opacity: 0.8; }
+        50% { opacity: 0.3; }
+        100% { transform: translateY(250px); opacity: 0.8; }
+      }
+      @keyframes pulseBeam {
+        0% { stroke-dashoffset: 600; }
+        100% { stroke-dashoffset: 0; }
+      }
+      @keyframes blinkDot {
+        0%, 100% { opacity: 1; filter: drop-shadow(0 0 4px #00FF88); }
+        50% { opacity: 0.3; filter: none; }
+      }
+      @keyframes textGlow {
+        0%, 100% { filter: drop-shadow(0 0 8px rgba(0,240,255,0.6)); }
+        50% { filter: drop-shadow(0 0 15px rgba(255,0,127,0.7)); }
+      }
+      .scanline-bar {
+        animation: scanline 4s linear infinite;
+      }
+      .signal-beam {
+        stroke-dasharray: 120 400;
+        animation: pulseBeam 3.5s linear infinite;
+      }
+      .beacon {
+        animation: blinkDot 1.6s ease-in-out infinite;
+      }
+      .title-glow {
+        animation: textGlow 5s ease-in-out infinite alternate;
+      }
+      .mono-text {
+        font-family: 'Fira Code', 'Courier New', Courier, monospace;
+      }
+    </style>
+  </defs>
+
+  <!-- Frame Background -->
+  <rect width="950" height="250" rx="12" fill="url(#bgGrad)" stroke="#162238" stroke-width="1.5"/>
+  <rect width="950" height="250" fill="url(#cyberGrid)" rx="12"/>
+
+  <!-- Scanning Laser Bar -->
+  <line x1="10" y1="0" x2="940" y2="0" stroke="url(#pulseGrad)" stroke-width="2" class="scanline-bar" opacity="0.7"/>
+
+  <!-- Top Circuit Trace Beam -->
+  <path d="M 30 20 L 180 20 L 200 40 L 750 40 L 770 20 L 920 20" fill="none" stroke="#162c4b" stroke-width="1.5"/>
+  <path d="M 30 20 L 180 20 L 200 40 L 750 40 L 770 20 L 920 20" fill="none" stroke="#00F0FF" stroke-width="1.5" class="signal-beam"/>
+
+  <!-- HUD Corner Accents -->
+  <path d="M 16 35 L 16 16 L 35 16" fill="none" stroke="#00F0FF" stroke-width="2" filter="url(#glow)"/>
+  <path d="M 934 35 L 934 16 L 915 16" fill="none" stroke="#00F0FF" stroke-width="2" filter="url(#glow)"/>
+  <path d="M 16 215 L 16 234 L 35 234" fill="none" stroke="#00F0FF" stroke-width="2" filter="url(#glow)"/>
+  <path d="M 934 215 L 934 234 L 915 234" fill="none" stroke="#00F0FF" stroke-width="2" filter="url(#glow)"/>
+
+  <!-- Top Metadata Bar -->
+  <g class="mono-text" font-size="10" fill="#4E6B8E" letter-spacing="1.5">
+    <text x="45" y="24">SYS_ID: // YASIR_CORE-0x7F</text>
+    <text x="360" y="24">NODE: FAST-NUCES.KHI</text>
+    <text x="640" y="24">KERNEL: PROTOCOL_INTERCEPTOR</text>
+  </g>
+
+  <!-- Live Status Beacon -->
+  <g transform="translate(850, 16)">
+    <circle cx="0" cy="0" r="4.5" fill="#00FF88" class="beacon"/>
+    <text x="10" y="3.5" class="mono-text" font-size="10" font-weight="700" fill="#00FF88" letter-spacing="1">LIVE</text>
+  </g>
+
+  <!-- Main System Title -->
+  <g transform="translate(475, 115)" text-anchor="middle">
+    <!-- Outer Glow Sub-layer -->
+    <text class="mono-text title-glow" font-size="44" font-weight="900" fill="url(#cyanGrad)" letter-spacing="6">
+      YASIR AMIN BROHI
+    </text>
+  </g>
+
+  <!-- System Sub-Directive -->
+  <g transform="translate(475, 155)" text-anchor="middle">
+    <text class="mono-text" font-size="13" font-weight="600" fill="#7E9EB8" letter-spacing="3">
+      [ PROTOCOL REVERSE ENGINEERING • BROWSER EXTENSIONS • SYSTEMS • ANDROID ]
+    </text>
+  </g>
+
+  <!-- Bottom Oscilloscope Waveform Graphic -->
+  <g transform="translate(180, 195)">
+    <!-- Decorative baseline -->
+    <line x1="0" y1="10" x2="590" y2="10" stroke="#16273d" stroke-width="1"/>
+    
+    <!-- Audio / Signal Pulse Path -->
+    <path d="M 0 10 Q 30 10 45 -2 Q 60 22 75 10 T 115 10 Q 140 -8 155 25 Q 170 -15 185 10 T 240 10 Q 260 -5 275 18 Q 290 2 305 10 T 360 10 Q 380 -22 400 30 Q 420 -10 440 10 T 500 10 Q 520 2 540 10 L 590 10" 
+          fill="none" stroke="#00F0FF" stroke-width="1.8" filter="url(#glow)" opacity="0.85"/>
+  </g>
+
+  <!-- Bottom System Coordinates -->
+  <g class="mono-text" font-size="9" fill="#3D5675" letter-spacing="2">
+    <text x="45" y="228">COORD: 24.8607° N, 67.0011° E</text>
+    <text x="400" y="228">RUNTIME: MULTI-SYSTEM V3</text>
+    <text x="770" y="228">ARCH: SEC_DISTRIBUTED</text>
+  </g>
+</svg>
