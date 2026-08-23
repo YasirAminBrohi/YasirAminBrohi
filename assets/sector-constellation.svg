@@ -1,129 +1,116 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 420" width="100%" height="100%">
+<svg width="950" height="500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 500">
+  
   <defs>
-    <linearGradient id="cBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#070b14"/>
-      <stop offset="100%" stop-color="#0a1220"/>
-    </linearGradient>
-
-    <linearGradient id="cyanLine" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#00F0FF"/>
-      <stop offset="100%" stop-color="#7000FF"/>
-    </linearGradient>
-
-    <linearGradient id="pinkLine" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#FF007F"/>
-      <stop offset="100%" stop-color="#FF9900"/>
-    </linearGradient>
-
-    <filter id="cBloom" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#0F1D30" stroke-width="1" opacity="0.8"/>
+    </pattern>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
     </filter>
-
-    <style>
-      @keyframes pulseNode {
-        0%, 100% { r: 6; opacity: 1; }
-        50% { r: 9; opacity: 0.6; }
-      }
-      @keyframes streamFlow {
-        0% { stroke-dashoffset: 400; }
-        100% { stroke-dashoffset: 0; }
-      }
-      .node-core {
-        animation: pulseNode 3s ease-in-out infinite;
-      }
-      .bus-pulse {
-        stroke-dasharray: 20 80;
-        animation: streamFlow 4s linear infinite;
-      }
-      .mono {
-        font-family: 'Fira Code', 'Courier New', monospace;
-      }
-    </style>
+    <linearGradient id="grad-title" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F0FF" />
+      <stop offset="50%" stop-color="#7B2FFF" />
+      <stop offset="100%" stop-color="#FF007F" />
+    </linearGradient>
+    <linearGradient id="grad-end" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF007F" />
+      <stop offset="50%" stop-color="#00F0FF" />
+      <stop offset="100%" stop-color="#00FF88" />
+    </linearGradient>
+    <linearGradient id="orbitGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F0FF" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#7B2FFF" stop-opacity="0.2"/>
+    </linearGradient>
   </defs>
+  <style>
+    text { font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace; }
+    .scanline { animation: scan 6s linear infinite; }
+    @keyframes scan {
+      0% { transform: translateY(-50px); opacity: 0; }
+      10% { opacity: 0.5; }
+      90% { opacity: 0.5; }
+      100% { transform: translateY(600px); opacity: 0; }
+    }
+    .pulseBeam { stroke-dasharray: 100 900; animation: dash 4s linear infinite; }
+    @keyframes dash {
+      from { stroke-dashoffset: 1000; }
+      to { stroke-dashoffset: 0; }
+    }
+    .blinkDot { animation: blink 1.5s ease-in-out infinite alternate; }
+    @keyframes blink { 0% { opacity: 0.2; } 100% { opacity: 1; } }
+    .pulseNode { animation: pulseRadius 2s ease-in-out infinite alternate; }
+    @keyframes pulseRadius { 0% { r: 16; } 100% { r: 20; } }
+    .titleGlow { animation: drop 3s infinite alternate; }
+    @keyframes drop {
+      0% { filter: drop-shadow(0px 0px 5px rgba(0,240,255,0.4)); }
+      100% { filter: drop-shadow(0px 0px 10px rgba(123,47,255,0.6)); }
+    }
+  </style>
 
-  <!-- Frame -->
-  <rect width="950" height="420" rx="10" fill="url(#cBg)" stroke="#17243b" stroke-width="1.5"/>
+  <rect width="950" height="500" fill="#050A12" rx="8"/>
+  <rect width="950" height="500" fill="url(#grid)" rx="8" opacity="0.4"/>
+  
+    <!-- Corner Brackets -->
+    <path d="M 15 35 L 15 15 L 35 15" fill="none" stroke="#00F0FF" stroke-width="2" filter="url(#glow)"/>
+    <path d="M 915 15 L 935 15 L 935 35" fill="none" stroke="#00F0FF" stroke-width="2" filter="url(#glow)"/>
+    <path d="M 15 465 L 15 485 L 35 485" fill="none" stroke="#00F0FF" stroke-width="2" filter="url(#glow)"/>
+    <path d="M 915 485 L 935 485 L 935 465" fill="none" stroke="#00F0FF" stroke-width="2" filter="url(#glow)"/>
+    
 
-  <!-- Background Constellation Traces -->
-  <g opacity="0.3" stroke="#1c304d" stroke-width="1">
-    <line x1="120" y1="60" x2="830" y2="60"/>
-    <line x1="120" y1="360" x2="830" y2="360"/>
-    <line x1="475" y1="40" x2="475" y2="380"/>
-  </g>
+  <path class="pulseBeam" d="M 475 250 L 175 100" fill="none" stroke="#00F0FF" stroke-width="2" stroke-dasharray="30 100" opacity="0.6"/>
+  <path class="pulseBeam" d="M 475 250 L 175 400" fill="none" stroke="#00FF88" stroke-width="2" stroke-dasharray="30 100" opacity="0.6"/>
+  <path class="pulseBeam" d="M 475 250 L 775 100" fill="none" stroke="#FF007F" stroke-width="2" stroke-dasharray="30 100" opacity="0.6"/>
+  <path class="pulseBeam" d="M 475 250 L 775 400" fill="none" stroke="#FFB800" stroke-width="2" stroke-dasharray="30 100" opacity="0.6"/>
 
-  <!-- BUS LINES (Active Power Paths) -->
-  <!-- Center to Sector 01 (Top-Left) -->
-  <path d="M 475 210 L 320 210 L 260 110 L 160 110" fill="none" stroke="#162e4a" stroke-width="2"/>
-  <path d="M 475 210 L 320 210 L 260 110 L 160 110" fill="none" stroke="#00F0FF" stroke-width="2" class="bus-pulse"/>
+  <path d="M 175 100 L 90 60 M 175 100 L 160 155 M 175 100 L 250 55 M 175 100 L 80 155" fill="none" stroke="#00F0FF" stroke-width="0.5" opacity="0.4"/>
+  <path d="M 175 400 L 90 350 M 175 400 L 170 430 M 175 400 L 260 380 M 175 400 L 90 440" fill="none" stroke="#00FF88" stroke-width="0.5" opacity="0.4"/>
+  <path d="M 775 100 L 690 55 M 775 100 L 780 155 M 775 100 L 870 60 M 775 100 L 850 155 M 775 100 L 700 155" fill="none" stroke="#FF007F" stroke-width="0.5" opacity="0.4"/>
+  <path d="M 775 400 L 700 380 M 775 400 L 780 430 M 775 400 L 870 370" fill="none" stroke="#FFB800" stroke-width="0.5" opacity="0.4"/>
 
-  <!-- Center to Sector 02 (Bottom-Left) -->
-  <path d="M 475 210 L 320 210 L 260 310 L 160 310" fill="none" stroke="#162e4a" stroke-width="2"/>
-  <path d="M 475 210 L 320 210 L 260 310 L 160 310" fill="none" stroke="#00FF88" stroke-width="2" class="bus-pulse"/>
+  <!-- Core Node -->
+  <circle class="pulseNode" cx="475" cy="250" r="18" fill="none" stroke="#7B2FFF" stroke-width="2" filter="url(#glow)"/>
+  <circle cx="475" cy="250" r="6" fill="#7B2FFF"/>
+  <text x="475" y="285" fill="#E2E8F0" font-size="12" font-weight="bold" text-anchor="middle">YASIR_NEXUS</text>
 
-  <!-- Center to Sector 03 (Top-Right) -->
-  <path d="M 475 210 L 630 210 L 690 110 L 790 110" fill="none" stroke="#162e4a" stroke-width="2"/>
-  <path d="M 475 210 L 630 210 L 690 110 L 790 110" fill="none" stroke="#FF007F" stroke-width="2" class="bus-pulse"/>
+  <!-- Sector Nodes -->
+  <!-- ALPHA -->
+  <circle cx="175" cy="100" r="14" fill="#00F0FF" filter="url(#glow)" opacity="0.8"/>
+  <text x="175" y="130" fill="#00F0FF" font-size="10" text-anchor="middle">BROWSER &amp; MV3</text>
+  
+  <!-- BETA -->
+  <circle cx="175" cy="400" r="14" fill="#00FF88" filter="url(#glow)" opacity="0.8"/>
+  <text x="175" y="380" fill="#00FF88" font-size="10" text-anchor="middle">MOBILE &amp; ANDROID</text>
 
-  <!-- Center to Sector 04 (Bottom-Right) -->
-  <path d="M 475 210 L 630 210 L 690 310 L 790 310" fill="none" stroke="#162e4a" stroke-width="2"/>
-  <path d="M 475 210 L 630 210 L 690 310 L 790 310" fill="none" stroke="#FFB800" stroke-width="2" class="bus-pulse"/>
+  <!-- GAMMA -->
+  <circle cx="775" cy="100" r="14" fill="#FF007F" filter="url(#glow)" opacity="0.8"/>
+  <text x="775" y="130" fill="#FF007F" font-size="10" text-anchor="middle">PLATFORMS &amp; WEB</text>
 
-  <!-- ==================== -->
-  <!-- CENTER CORE NEXUS    -->
-  <!-- ==================== -->
-  <g transform="translate(475, 210)">
-    <circle cx="0" cy="0" r="32" fill="#08101e" stroke="#00F0FF" stroke-width="2" filter="url(#cBloom)"/>
-    <circle cx="0" cy="0" r="22" fill="#0d182b" stroke="#7000FF" stroke-width="1.5"/>
-    <circle cx="0" cy="0" r="6" fill="#00F0FF" class="node-core"/>
-    <text y="-40" class="mono" font-size="12" font-weight="700" fill="#00F0FF" text-anchor="middle" letter-spacing="2">YASIR_NEXUS</text>
-    <text y="48" class="mono" font-size="9" fill="#587799" text-anchor="middle" letter-spacing="1">ROOT_DISPATCHER</text>
-  </g>
+  <!-- DELTA -->
+  <circle cx="775" cy="400" r="14" fill="#FFB800" filter="url(#glow)" opacity="0.8"/>
+  <text x="775" y="380" fill="#FFB800" font-size="10" text-anchor="middle">SYSTEMS &amp; CLI</text>
 
-  <!-- ============================================== -->
-  <!-- SECTOR 01: BROWSER PROTOCOLS (Top Left)         -->
-  <!-- ============================================== -->
-  <g transform="translate(130, 90)">
-    <rect x="-100" y="-35" width="220" height="70" rx="6" fill="#0b1322" stroke="#00F0FF" stroke-width="1.2"/>
-    <circle cx="-85" cy="0" r="5" fill="#00F0FF" filter="url(#cBloom)"/>
-    <text x="-70" y="-12" class="mono" font-size="11" font-weight="700" fill="#00F0FF">SECTOR // ALPHA</text>
-    <text x="-70" y="4" class="mono" font-size="9.5" font-weight="600" fill="#FFFFFF">Browser &amp; MV3 Protocols</text>
-    <text x="-70" y="20" class="mono" font-size="8" fill="#6788A8">WhatsappSpam • Jadu • MailMerge</text>
-  </g>
+  <!-- ALPHA Projects -->
+  <circle cx="90" cy="60" r="4" fill="#00F0FF"/><text x="90" y="52" fill="#7E9EB8" font-size="9" text-anchor="middle">WhatsappSpam</text>
+  <circle cx="160" cy="155" r="4" fill="#00F0FF"/><text x="160" y="170" fill="#7E9EB8" font-size="9" text-anchor="middle">WhatsappForward</text>
+  <circle cx="250" cy="55" r="4" fill="#00F0FF"/><text x="250" y="47" fill="#7E9EB8" font-size="9" text-anchor="middle">Jadu</text>
+  <circle cx="80" cy="155" r="4" fill="#00F0FF"/><text x="80" y="170" fill="#7E9EB8" font-size="9" text-anchor="middle">GmailAutoMailMerge</text>
 
-  <!-- ============================================== -->
-  <!-- SECTOR 02: STEALTH & MOBILE (Bottom Left)      -->
-  <!-- ============================================== -->
-  <g transform="translate(130, 310)">
-    <rect x="-100" y="-35" width="220" height="70" rx="6" fill="#0b1322" stroke="#00FF88" stroke-width="1.2"/>
-    <circle cx="-85" cy="0" r="5" fill="#00FF88" filter="url(#cBloom)"/>
-    <text x="-70" y="-12" class="mono" font-size="11" font-weight="700" fill="#00FF88">SECTOR // BETA</text>
-    <text x="-70" y="4" class="mono" font-size="9.5" font-weight="600" fill="#FFFFFF">Stealth Mobile &amp; Jetpack</text>
-    <text x="-70" y="20" class="mono" font-size="8" fill="#6788A8">ChupChap • Woof • Hardware Triggers</text>
-  </g>
+  <!-- BETA Projects -->
+  <circle cx="90" cy="350" r="4" fill="#00FF88"/><text x="90" y="342" fill="#7E9EB8" font-size="9" text-anchor="middle">ChupChap</text>
+  <circle cx="170" cy="430" r="4" fill="#00FF88"/><text x="170" y="445" fill="#7E9EB8" font-size="9" text-anchor="middle">Woof-App</text>
+  <circle cx="260" cy="380" r="4" fill="#00FF88"/><text x="260" y="372" fill="#7E9EB8" font-size="9" text-anchor="middle">Dice-App</text>
+  <circle cx="90" cy="440" r="4" fill="#00FF88"/><text x="90" y="455" fill="#7E9EB8" font-size="9" text-anchor="middle">Tip-Calculator</text>
 
-  <!-- ============================================== -->
-  <!-- SECTOR 03: PLATFORMS & GRAPHS (Top Right)      -->
-  <!-- ============================================== -->
-  <g transform="translate(820, 90)">
-    <rect x="-120" y="-35" width="220" height="70" rx="6" fill="#0b1322" stroke="#FF007F" stroke-width="1.2"/>
-    <circle cx="-105" cy="0" r="5" fill="#FF007F" filter="url(#cBloom)"/>
-    <text x="-90" y="-12" class="mono" font-size="11" font-weight="700" fill="#FF007F">SECTOR // GAMMA</text>
-    <text x="-90" y="4" class="mono" font-size="9.5" font-weight="600" fill="#FFFFFF">Distributed Web &amp; Graphs</text>
-    <text x="-90" y="20" class="mono" font-size="8" fill="#6788A8">Jagha • Volia • iNotebook MERN</text>
-  </g>
+  <!-- GAMMA Projects -->
+  <circle cx="690" cy="55" r="4" fill="#FF007F"/><text x="690" y="47" fill="#7E9EB8" font-size="9" text-anchor="middle">Jagha</text>
+  <circle cx="780" cy="155" r="4" fill="#FF007F"/><text x="780" y="170" fill="#7E9EB8" font-size="9" text-anchor="middle">Volia</text>
+  <circle cx="870" cy="60" r="4" fill="#FF007F"/><text x="870" y="52" fill="#7E9EB8" font-size="9" text-anchor="middle">Volia-Backend</text>
+  <circle cx="850" cy="155" r="4" fill="#FF007F"/><text x="850" y="170" fill="#7E9EB8" font-size="9" text-anchor="middle">iNotebook</text>
+  <circle cx="700" cy="155" r="4" fill="#FF007F"/><text x="700" y="170" fill="#7E9EB8" font-size="9" text-anchor="middle">portfolio</text>
 
-  <!-- ============================================== -->
-  <!-- SECTOR 04: LOW-LEVEL & CLI (Bottom Right)      -->
-  <!-- ============================================== -->
-  <g transform="translate(820, 310)">
-    <rect x="-120" y="-35" width="220" height="70" rx="6" fill="#0b1322" stroke="#FFB800" stroke-width="1.2"/>
-    <circle cx="-105" cy="0" r="5" fill="#FFB800" filter="url(#cBloom)"/>
-    <text x="-90" y="-12" class="mono" font-size="11" font-weight="700" fill="#FFB800">SECTOR // DELTA</text>
-    <text x="-90" y="4" class="mono" font-size="9.5" font-weight="600" fill="#FFFFFF">Low-Level, CLI &amp; Native</text>
-    <text x="-90" y="20" class="mono" font-size="8" fill="#6788A8">wacli_window (Go) • Soundboard (Rust)</text>
-  </g>
+  <!-- DELTA Projects -->
+  <circle cx="700" cy="380" r="4" fill="#FFB800"/><text x="700" y="372" fill="#7E9EB8" font-size="9" text-anchor="middle">wacli_window</text>
+  <circle cx="780" cy="430" r="4" fill="#FFB800"/><text x="780" y="445" fill="#7E9EB8" font-size="9" text-anchor="middle">Soundboard</text>
+  <circle cx="870" cy="370" r="4" fill="#FFB800"/><text x="870" y="362" fill="#7E9EB8" font-size="9" text-anchor="middle">Games_2D_C</text>
 </svg>

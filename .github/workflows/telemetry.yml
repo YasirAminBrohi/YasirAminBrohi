@@ -2,8 +2,8 @@ name: Update Profile Telemetry
 
 on:
   schedule:
-    - cron: '0 */12 * * *' # Run every 12 hours
-  workflow_dispatch: # Allow manual trigger
+    - cron: '0 */12 * * *' # Executes automatically every 12 hours
+  workflow_dispatch:      # Allows manual trigger in Actions tab
 
 permissions:
   contents: write
@@ -23,7 +23,7 @@ jobs:
       - name: Generate Telemetry SVG
         run: python scripts/generate_telemetry.py
 
-      - name: Commit and Push changes
+      - name: Commit and Push telemetry asset
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"

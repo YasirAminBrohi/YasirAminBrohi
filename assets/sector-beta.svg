@@ -1,4 +1,4 @@
-<svg width="950" height="260" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 260">
+<svg width="950" height="42" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 42">
   
   <defs>
     <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
@@ -48,32 +48,10 @@
     }
   </style>
 
-  <rect width="950" height="260" fill="#050A12" rx="8"/>
-  <rect width="950" height="260" fill="url(#grid)" rx="8" opacity="0.8"/>
-  
-    <!-- Corner Brackets -->
-    <path d="M 15 35 L 15 15 L 35 15" fill="none" stroke="#00F0FF" stroke-width="2" filter="url(#glow)"/>
-    <path d="M 915 15 L 935 15 L 935 35" fill="none" stroke="#00F0FF" stroke-width="2" filter="url(#glow)"/>
-    <path d="M 15 225 L 15 245 L 35 245" fill="none" stroke="#00F0FF" stroke-width="2" filter="url(#glow)"/>
-    <path d="M 915 245 L 935 245 L 935 225" fill="none" stroke="#00F0FF" stroke-width="2" filter="url(#glow)"/>
-    
-  
-  <line class="scanline" x1="0" y1="0" x2="950" y2="0" stroke="#00F0FF" stroke-width="2" opacity="0.2"/>
-
-  <text x="45" y="30" fill="#7E9EB8" font-size="12">SYS_ID: YASIR_CORE-0x7F</text>
-  <text x="475" y="30" fill="#7E9EB8" font-size="12" text-anchor="middle">NODE: FAST-NUCES.KHI</text>
-  <text x="905" y="30" fill="#7E9EB8" font-size="12" text-anchor="end">KERNEL: v3.0_INTERCEPTOR</text>
-
-  <circle class="blinkDot" cx="925" cy="26" r="4" fill="#00FF88" filter="url(#glow)"/>
-
-  <path class="pulseBeam" d="M 45 45 L 200 45 L 220 65 L 730 65 L 750 45 L 905 45" fill="none" stroke="#00F0FF" stroke-width="1.5" filter="url(#glow)"/>
-
-  <text x="475" y="140" fill="url(#grad-title)" font-size="48" font-weight="bold" text-anchor="middle" class="titleGlow">YASIR AMIN BROHI</text>
-  
-  <text x="475" y="175" fill="#7E9EB8" font-size="13" text-anchor="middle" letter-spacing="2">[ PROTOCOL ENGINEERING · BROWSER INTERNALS · SYSTEMS · ANDROID ]</text>
-
-  <path d="M 275 220 Q 300 190 325 220 T 375 220 T 425 220 T 475 220 T 525 220 T 575 220 T 625 220 T 675 220" fill="none" stroke="#FF007F" stroke-width="1.5" filter="url(#glow)" stroke-dasharray="250 500" class="pulseBeam"/>
-
-  <text x="45" y="240" fill="#3D5675" font-size="10">COORD: 24.8607° N, 67.0011° E</text>
-  <text x="905" y="240" fill="#3D5675" font-size="10" text-anchor="end">RUNTIME: DISTRIBUTED_V3</text>
+  <rect width="950" height="42" fill="#0A1628" rx="4"/>
+  <rect width="950" height="42" fill="url(#grid)" rx="4" opacity="0.6"/>
+  <polygon points="15,21 21,15 27,21 21,27" fill="#00FF88" filter="url(#glow)"/>
+  <text x="40" y="25" fill="#00FF88" font-size="12" font-weight="bold">── ◆ SECTOR // BETA ── STEALTH MOBILE & ANDROID SYSTEMS</text>
+  <line x1="450" y1="21" x2="930" y2="21" stroke="#00FF88" stroke-width="1" opacity="0.4"/>
+  <text x="930" y="35" fill="#3D5675" font-size="8" text-anchor="end">SYS_BETA_0x88</text>
 </svg>

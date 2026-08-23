@@ -1,7 +1,7 @@
 <div align="center">
 
   <!-- ====================================================== -->
-  <!-- LAYER 00: CUSTOM ANIMATED SYSTEM HEADER BANNER         -->
+  <!-- 01 // CORE SYSTEM INITIALIZATION                       -->
   <!-- ====================================================== -->
   <a href="https://github.com/YasirAminBrohi">
     <img src="./assets/header-core.svg" width="100%" alt="Yasir Amin Brohi - Core Header" />
@@ -10,15 +10,16 @@
   <br/><br/>
 
   <!-- ====================================================== -->
-  <!-- TACTICAL NAVIGATION STRIP                              -->
+  <!-- TACTICAL NAVIGATION BAR                                -->
   <!-- ====================================================== -->
   <p align="center">
-    <a href="#-layer-01--operator-specification"><img src="https://img.shields.io/badge/OPERATOR-0x7F_PROFILE-00F0FF?style=for-the-badge&logo=gnometerminal&logoColor=black" alt="Profile" /></a>
-    <a href="#-layer-02--the-software-universe-sector-matrix"><img src="https://img.shields.io/badge/SECTOR-TOPOLOGY_MAP-7000FF?style=for-the-badge&logo=diagramsdotnet&logoColor=white" alt="Sectors" /></a>
-    <a href="#-layer-03--flagship-architectural-dossiers"><img src="https://img.shields.io/badge/DOSSIERS-FLAGSHIP_ENGINES-FF007F?style=for-the-badge&logo=target&logoColor=white" alt="Projects" /></a>
-    <a href="#-layer-04--engineering-runtime-topology"><img src="https://img.shields.io/badge/STACK-SYSTEM_TOPOLOGY-00FF88?style=for-the-badge&logo=buffer&logoColor=black" alt="Stack" /></a>
-    <a href="#-layer-05--live-system-telemetry"><img src="https://img.shields.io/badge/TELEMETRY-CRON_ONLINE-FFB800?style=for-the-badge&logo=lighthouse&logoColor=black" alt="Telemetry" /></a>
-    <a href="#-layer-06--secure-uplink-channels"><img src="https://img.shields.io/badge/UPLINK-CONNECT-FFFFFF?style=for-the-badge&logo=signal&logoColor=black" alt="Uplink" /></a>
+    <a href="#-02--operator-profile"><img src="https://img.shields.io/badge/OPERATOR-0x7F_PROFILE-00F0FF?style=for-the-badge&logo=gnometerminal&logoColor=black" alt="Operator" /></a>
+    <a href="#-03--the-software-universe-constellation"><img src="https://img.shields.io/badge/CONSTELLATION-UNIVERSE_MAP-7B2FFF?style=for-the-badge&logo=diagramsdotnet&logoColor=white" alt="Constellation" /></a>
+    <a href="#-04--sector-matrix--repository-breakdown"><img src="https://img.shields.io/badge/SECTORS-REPOSITORY_MATRIX-FF007F?style=for-the-badge&logo=buffer&logoColor=white" alt="Sectors" /></a>
+    <a href="#-05--flagship-architectural-dossiers"><img src="https://img.shields.io/badge/DOSSIERS-FLAGSHIP_ENGINES-00FF88?style=for-the-badge&logo=target&logoColor=black" alt="Dossiers" /></a>
+    <a href="#-06--engineering-runtime-topology"><img src="https://img.shields.io/badge/TOPOLOGY-STACK_MATRIX-FFB800?style=for-the-badge&logo=stackshare&logoColor=black" alt="Topology" /></a>
+    <a href="#-08--live-system-telemetry"><img src="https://img.shields.io/badge/TELEMETRY-CRON_ONLINE-00F0FF?style=for-the-badge&logo=lighthouse&logoColor=black" alt="Telemetry" /></a>
+    <a href="#-10--secure-uplink-channels"><img src="https://img.shields.io/badge/UPLINK-CONNECT-FFFFFF?style=for-the-badge&logo=signal&logoColor=black" alt="Uplink" /></a>
   </p>
 
 </div>
@@ -27,29 +28,35 @@
 
 ---
 
-## ⚡ LAYER 01 // OPERATOR SPECIFICATION
+## ⚡ 02 // OPERATOR PROFILE
+
+<div align="center">
+  <img src="./assets/operator-core.svg" width="100%" alt="Operator Manifest" />
+</div>
+
+<br/>
 
 ```typescript
 /* =========================================================================
  * IDENTITY MANIFEST: YASIR_CORE_RUNTIME
  * ========================================================================= */
-export const Operator: DeveloperProfile = {
+export const Operator: DeveloperManifest = {
   handle: "YasirAminBrohi",
   designation: "Systems & Browser Protocol Engineer",
   institution: "FAST-NUCES Karachi Campus (B.S. Computer Science) 🇵🇰",
   location: { region: "Sindh, Pakistan", coordinates: "24.8607° N, 67.0011° E" },
   
-  architecturalDisciplines: [
+  engineeringDisciplines: [
     "Chromium Manifest V3 Internals & Protocol Reverse Engineering",
-    "Hardware-Triggered Android Background Services & CameraX",
-    "Cross-Platform Terminal PTY & Win32 Socket Translation (Go / Rust)",
+    "Hardware-Triggered Android Background Services & Headless CameraX",
+    "Cross-Platform Terminal PTY & Win32 Socket Translation (Go / Rust / Tauri)",
     "Distributed Web Applications & Graph Navigation Platforms (React / Node / TS)",
-    "Deterministic Matrix Game Simulation Engines (C / Algorithmic Heuristics)"
+    "Algorithmic Matrix Game Engines (C / 2D Heuristics)"
   ],
   
-  engineeringTenet:
-    "Software boundaries are arbitrary abstractions. When an API doesn't expose a feature, " +
-    "inspect the runtime memory, hook the protocol pipeline, and build the interceptor."
+  engineeringPhilosophy:
+    "Software boundaries are arbitrary abstractions. When an API does not expose a capability, " +
+    "inspect the runtime memory, hook into the protocol pipeline, and build the interceptor."
 };
 ```
 
@@ -57,125 +64,156 @@ export const Operator: DeveloperProfile = {
 
 ---
 
-## 🛰️ LAYER 02 // THE SOFTWARE UNIVERSE (SECTOR MATRIX)
+## 🛰️ 03 // THE SOFTWARE UNIVERSE (CONSTELLATION)
 
 <div align="center">
-  <p><i>Topological dependency map categorizing verified public repositories into specialized execution sectors.</i></p>
+  <p><i>Topological software constellation visualizing the 4 execution sectors and their verified codebases.</i></p>
   <img src="./assets/sector-constellation.svg" width="100%" alt="Sector Constellation Map" />
 </div>
 
 <br/>
 
-### 🗺️ Sector Taxonomy Breakdown
+---
 
-| Sector Identification | Domain Scope | Primary Codebases | Architectural Focus |
+## 🗺️ 04 // SECTOR MATRIX & REPOSITORY BREAKDOWN
+
+<br/>
+
+<div align="center">
+  <img src="./assets/sector-alpha.svg" width="100%" alt="Sector Alpha" />
+</div>
+
+### 🔮 Sector Alpha — Browser Protocols & MV3 Engines
+*High-performance Chromium extensions, in-memory state hooks, and client-side automation pipelines.*
+
+| Codebase | Architectural Domain | Core Stack | Description |
 | :--- | :--- | :--- | :--- |
-| **`SECTOR // ALPHA`** | **Browser Protocols & MV3 Engines** | [`WhatsappSpam`](https://github.com/YasirAminBrohi/WhatsappSpam) • [`WhatsappForward`](https://github.com/YasirAminBrohi/WhatsappForward) • [`Jadu`](https://github.com/YasirAminBrohi/Jadu) • [`GmailAutoMailMerge`](https://github.com/YasirAminBrohi/GmailAutoMailMerge) | DOM mutation interception, Signal protocol payload synthesis, client-side mail merging. |
-| **`SECTOR // BETA`** | **Stealth Mobile & Android Systems** | [`ChupChap`](https://github.com/YasirAminBrohi/ChupChap) • [`Woof-App`](https://github.com/YasirAminBrohi/Woof-App) • [`Tip-Calculator-App`](https://github.com/YasirAminBrohi/Tip-Calculator-App) • [`Dice-App`](https://github.com/YasirAminBrohi/Dice-App) | Physical keycode capture, zero-preview CameraX background workers, Jetpack Compose Material 3. |
-| **`SECTOR // GAMMA`** | **Distributed Platforms & Graphs** | [`Jagha`](https://github.com/YasirAminBrohi/Jagha) • [`Volia`](https://github.com/YasirAminBrohi/Volia) • [`Volia-Backend`](https://github.com/YasirAminBrohi/Volia-Backend) • [`inotebook-backend`](https://github.com/YasirAminBrohi/inotebook-backend) • [`portfolio`](https://github.com/YasirAminBrohi/portfolio) | FAST-NUCES seating plan routing engine, high-speed stream parsers, authenticated cloud notes. |
-| **`SECTOR // DELTA`** | **Low-Level, CLI & Native Audio** | [`wacli_window`](https://github.com/YasirAminBrohi/wacli_window) • [`Soundboard`](https://github.com/YasirAminBrohi/Soundboard) • [`Games_In_2DArray_C`](https://github.com/YasirAminBrohi/Games_In_2DArray_C) | Windows PTY translation in Go, Tauri & Rust low-latency audio pipelines, C matrix game algorithms. |
+| [`WhatsappSpam`](https://github.com/YasirAminBrohi/WhatsappSpam) | **Sticker Batch Dispatcher** | `TypeScript` • `Chrome MV3` • `DOM Pipeline` | Automated WhatsApp Web sticker dispatching in bursts with transparent injection and human-jitter rate limiting. |
+| [`WhatsappForward`](https://github.com/YasirAminBrohi/WhatsappForward) | **Protocol Metadata Spoof** | `TypeScript` • `esbuild` • `Signal Hooks` | Injects authentic protocol-level forwarded metadata into outgoing WhatsApp messages. |
+| [`Jadu`](https://github.com/YasirAminBrohi/Jadu) | **DOM Macro Automation** | `TypeScript` • `Chrome APIs` • `DOM Hooks` | Transforms the web into a keyboard-first environment with on-the-fly macro bindings and custom hotkeys. |
+| [`GmailAutoMailMerge`](https://github.com/YasirAminBrohi/GmailAutoMailMerge) | **Client-Side Bulk Mail Merge** | `JavaScript ES6+` • `Chrome MV3` • `CSV Engine` | Zero-server bulk personalized mail merge directly inside Gmail Web with client-side CSV parsing. |
+
+<br/>
+
+<div align="center">
+  <img src="./assets/sector-beta.svg" width="100%" alt="Sector Beta" />
+</div>
+
+### 📱 Sector Beta — Stealth Mobile & Android Systems
+*Native Kotlin applications, hardware-level broadcast receivers, and reactive Jetpack Compose interfaces.*
+
+| Codebase | Architectural Domain | Core Stack | Description |
+| :--- | :--- | :--- | :--- |
+| [`ChupChap`](https://github.com/YasirAminBrohi/ChupChap) | **Stealth Capture Engine** | `Kotlin` • `CameraX Headless` • `Foreground Svc` | Silent, hardware-triggered media capture via physical volume keys without waking the display. |
+| [`Woof-App`](https://github.com/YasirAminBrohi/Woof-App) | **Material 3 UI Architecture** | `Kotlin` • `Jetpack Compose` • `State Hoisting` | Reactive Android interface exploring Material Design 3 tokens and spring-physics animations. |
+| [`Tip-Calculator-App`](https://github.com/YasirAminBrohi/Tip-Calculator-App) | **Mobile Utility System** | `Kotlin` • `Android Jetpack` • `Compose` | Clean stateful calculations and dynamic currency rounding. |
+| [`Dice-App`](https://github.com/YasirAminBrohi/Dice-App) | **Hardware RNG Interface** | `Kotlin` • `Jetpack Compose` | Fast RNG visualization with optimized vector state handling. |
+
+<br/>
+
+<div align="center">
+  <img src="./assets/sector-gamma.svg" width="100%" alt="Sector Gamma" />
+</div>
+
+### 🌐 Sector Gamma — Distributed Platforms & Campus Graphs
+*Graph-based routing engines, high-speed universal stream extractors, and full-stack web applications.*
+
+| Codebase | Architectural Domain | Core Stack | Description |
+| :--- | :--- | :--- | :--- |
+| [`Jagha`](https://github.com/YasirAminBrohi/Jagha) | **Campus Seating Router** | `TypeScript` • `React` • `FAST Graph Engine` | High-precision exam seating plan & venue navigation engine crafted for FAST-NUCES Karachi students. |
+| [`Volia`](https://github.com/YasirAminBrohi/Volia) | **Media Client Interface** | `React.js` • `Vite` • `Tailwind CSS` | Ultra-responsive universal media downloader and stream extraction frontend with glassmorphism UI. |
+| [`Volia-Backend`](https://github.com/YasirAminBrohi/Volia-Backend) | **Stream Extraction Core** | `Node.js` • `Express` • `Stream Demuxer` | High-throughput stream parsing and format conversion backend engine. |
+| [`inotebook-backend`](https://github.com/YasirAminBrohi/inotebook-backend) • [`frontend`](https://github.com/YasirAminBrohi/inotebook-frontend) | **Authenticated Cloud Vault** | `MongoDB` • `Express` • `React` • `JWT` | Full-stack cloud notes management application featuring secure JWT authentication and encrypted CRUD. |
+| [`portfolio`](https://github.com/YasirAminBrohi/portfolio) | **Developer Showcase** | `React` • `Vite` • `Tailwind CSS` | High-performance personal portfolio highlighting software engineering projects and live demos. |
+
+<br/>
+
+<div align="center">
+  <img src="./assets/sector-delta.svg" width="100%" alt="Sector Delta" />
+</div>
+
+### ⚙️ Sector Delta — Low-Level Systems & CLI Runtimes
+*Cross-platform terminal PTY translation, ultra-low latency desktop audio, and deterministic C matrix engines.*
+
+| Codebase | Architectural Domain | Core Stack | Description |
+| :--- | :--- | :--- | :--- |
+| [`wacli_window`](https://github.com/YasirAminBrohi/wacli_window) | **Windows PTY Port** | `Go (Golang)` • `Win32 API` • `CLI Signals` | Ported Unix-exclusive `wacli` to Windows, resolving low-level PTY, socket, and console signal barriers. |
+| [`Soundboard`](https://github.com/YasirAminBrohi/Soundboard) | **Native Desktop Audio** | `Rust` • `Tauri` • `Audio Pipelines` | Ultra-low latency desktop soundboard engine built with Rust and Tauri for instant audio dispatching. |
+| [`Games_In_2DArray_C`](https://github.com/YasirAminBrohi/Games_In_2DArray_C) | **Matrix Game Simulation** | `C Language` • `2D Arrays` • `Algorithms` | Algorithmic board game engines implementing deterministic matrix state manipulation in pure C. |
 
 <br/>
 
 ---
 
-## 🔬 LAYER 03 // FLAGSHIP ARCHITECTURAL DOSSIERS
+## 🔬 05 // FLAGSHIP ARCHITECTURAL DOSSIERS
 
-```
-  ================================================================================
-  [DOSSIER 01] :: BROWSER PROTOCOL HOOKS & AUTOMATION ENGINES
-  ================================================================================
-```
+<br/>
 
-### 🔮 WhatsApp Web Protocol Synthesis & Burst Engines
-**Target Repositories:** [`WhatsappSpam`](https://github.com/YasirAminBrohi/WhatsappSpam) • [`WhatsappForward`](https://github.com/YasirAminBrohi/WhatsappForward)
+### 🔮 DOSSIER 01: Browser Protocol Interception & Metadata Synthesis
+**Core Codebases:** [`WhatsappSpam`](https://github.com/YasirAminBrohi/WhatsappSpam) • [`WhatsappForward`](https://github.com/YasirAminBrohi/WhatsappForward) • [`Jadu`](https://github.com/YasirAminBrohi/Jadu)
 
-```
-  ┌───────────────────────┐      ┌─────────────────────────┐      ┌─────────────────────────┐
-  │ Chromium Manifest V3  │ ───> │ In-Memory Hook Injector │ ───> │ WhatsApp Protocol Stack │
-  │ Content Script Engine │      │ (Signal / WWeb Meta)    │      │ (Synthetic Forwarding)  │
-  └───────────────────────┘      └─────────────────────────┘      └─────────────────────────┘
-```
+<div align="center">
+  <img src="./assets/dossier-browser.svg" width="100%" alt="Browser Extension Pipeline" />
+</div>
 
-* **The Problem:** Modern web messengers strictly isolate messaging metadata, blocking native batching and disallowing custom header injection.
-* **The Solution:** Engineered Chromium MV3 extensions utilizing TypeScript and esbuild to hook into WhatsApp Web's internal UI and metadata state machine.
+* **The Problem:** Modern Single Page Applications and secure messengers run in tightly isolated sandboxes, preventing programmatic batching and blocking custom header injection.
+* **The Solution:** Engineered Chromium MV3 extensions using TypeScript and esbuild that hook into WhatsApp Web's internal UI and metadata state machines.
 * **Key Mechanics:**
-  * **Native Sticker Injection:** Transparent format conversion directly into internal message queues without canvas artifacting.
+  * **Native Sticker Injection:** Transparent format conversion directly into internal message queues without canvas distortion.
   * **Forwarded Protocol Spoofing:** Injects authentic protocol-level metadata attributes into new outgoing payloads, making original messages behave as forward verified packets.
   * **Burst Throttling:** Human-jitter queueing algorithm preventing client-side connection throttling.
 
+<br/>
+
 ---
 
-```
-  ================================================================================
-  [DOSSIER 02] :: SILENT HARDWARE-TRIGGERED ANDROID SUBSYSTEMS
-  ================================================================================
-```
+### 🤫 DOSSIER 02: Headless Hardware-Triggered Android Subsystems
+**Core Codebase:** [`ChupChap`](https://github.com/YasirAminBrohi/ChupChap)
 
-### 🤫 ChupChap — Stealth Media Capture Engine
-**Target Repository:** [`ChupChap`](https://github.com/YasirAminBrohi/ChupChap)
+<div align="center">
+  <img src="./assets/dossier-mobile.svg" width="100%" alt="Android Stealth Architecture" />
+</div>
 
-```
-  ┌────────────────────────┐      ┌─────────────────────────┐      ┌─────────────────────────┐
-  │ Physical Hardware Keys │ ───> │ Foreground Service Lock │ ───> │ CameraX Headless Worker │
-  │ (Vol Up / Power Comb)  │      │ (Display State: OFF)    │      │ (Encrypted Byte Stream) │
-  └────────────────────────┘      └─────────────────────────┘      └─────────────────────────┘
-```
-
-* **The Problem:** Standard mobile cameras require waking the display, requesting UI viewports, and displaying viewfinder previews, creating severe latency and zero privacy.
-* **The Solution:** A native Kotlin Android system service binding directly to hardware key event dispatchers.
+* **The Problem:** Standard Android camera implementations require waking the screen, requesting window viewports, and binding to a viewfinder preview, causing latency and zero privacy.
+* **The Solution:** A native Kotlin Android background service binding directly to hardware key event dispatchers.
 * **Key Mechanics:**
   * **Headless CameraX Capture:** Captures high-resolution frames directly from the image buffer without binding to a visual `PreviewView`.
   * **Hardware Broadcast Receivers:** Listens for physical button combinations while the device CPU operates in low-power lockscreen states.
   * **Encrypted Sandbox Storage:** Streams media bytes directly to application-private internal storage.
 
----
-
-```
-  ================================================================================
-  [DOSSIER 03] :: BROWSER WORKFLOW MACROS & CLIENT-SIDE MERGERS
-  ================================================================================
-```
-
-### ⚡ Jadu & Gmail AutoMail Merge
-**Target Repositories:** [`Jadu`](https://github.com/YasirAminBrohi/Jadu) • [`GmailAutoMailMerge`](https://github.com/YasirAminBrohi/GmailAutoMailMerge)
-
-* **Jadu (Keyboard Superpowers):** Transforms standard web pages into keyboard-navigable applications. Features an in-memory macro recorder capturing DOM event chains and mapping hotkey listeners dynamically to arbitrary CSS selectors.
-* **Gmail AutoMail Merge:** Completely serverless client-side email dispatching. Parses local CSV datasets, dynamically compiles inline templates into Gmail's Draft compose state, and handles burst dispatching with zero external server dependencies.
+<br/>
 
 ---
 
-```
-  ================================================================================
-  [DOSSIER 04] :: CROSS-PLATFORM CLI & LOW-LEVEL RUNTIMES
-  ================================================================================
-```
+### 🪟 DOSSIER 03: Cross-Platform CLI & Native Desktop Audio
+**Core Codebases:** [`wacli_window`](https://github.com/YasirAminBrohi/wacli_window) • [`Soundboard`](https://github.com/YasirAminBrohi/Soundboard)
 
-### 🪟 wacli for Windows & Tauri Soundboard
-**Target Repositories:** [`wacli_window`](https://github.com/YasirAminBrohi/wacli_window) • [`Soundboard`](https://github.com/YasirAminBrohi/Soundboard)
+<div align="center">
+  <img src="./assets/dossier-systems.svg" width="100%" alt="Systems Architecture" />
+</div>
 
 * **wacli_window (Go / Win32):** Ported Unix-exclusive terminal CLI tooling to Windows by rewriting pseudoterminal (PTY) handling, adapting OS signal traps, and standardizing cross-platform console escape sequences.
 * **Soundboard (Tauri / Rust):** High-performance desktop audio playback engine using Rust backends to stream low-latency audio buffers for livestreams without high CPU or memory overhead.
-
----
-
-```
-  ================================================================================
-  [DOSSIER 05] :: CAMPUS GRAPH SYSTEMS & HIGH-SPEED STREAM EXTRACTORS
-  ================================================================================
-```
-
-### 📍 Jagha & Volia Media Engine
-**Target Repositories:** [`Jagha`](https://github.com/YasirAminBrohi/Jagha) • [`Volia`](https://github.com/YasirAminBrohi/Volia) • [`Volia-Backend`](https://github.com/YasirAminBrohi/Volia-Backend)
-
-* **Jagha (FAST-NUCES Seating Router):** Graph-based navigation engine developed specifically for FAST-NUCES Karachi campus students to compute exam seat coordinates, room layouts, and peer proximity mapping in sub-second queries.
-* **Volia:** Universal media downloader with a sleek React glassmorphism interface and a dedicated stream extraction backend capable of multi-source audio/video stream demuxing.
 
 <br/>
 
 ---
 
-## 🛠️ LAYER 04 // ENGINEERING RUNTIME TOPOLOGY
+### 📍 DOSSIER 04: Campus Seating Graph Routing & Media Extraction
+**Core Codebases:** [`Jagha`](https://github.com/YasirAminBrohi/Jagha) • [`Volia`](https://github.com/YasirAminBrohi/Volia) • [`Volia-Backend`](https://github.com/YasirAminBrohi/Volia-Backend)
+
+<div align="center">
+  <img src="./assets/dossier-platforms.svg" width="100%" alt="Platforms Architecture" />
+</div>
+
+* **Jagha (FAST-NUCES Seating Router):** Graph-based navigation engine developed specifically for FAST-NUCES Karachi campus students to compute exam seat coordinates, room layouts, and peer proximity mapping in sub-second queries.
+* **Volia Universal Engine:** Universal media downloader with a sleek React glassmorphism interface and a dedicated stream extraction backend capable of multi-source audio/video stream demuxing.
+
+<br/>
+
+---
+
+## 🛠️ 06 // ENGINEERING RUNTIME TOPOLOGY
 
 <div align="center">
   <img src="./assets/tech-matrix.svg" width="100%" alt="Tech Matrix Architecture Diagram" />
@@ -187,55 +225,48 @@ export const Operator: DeveloperProfile = {
   ================================================================================
   LAYER SPECIFICATION // VERIFIED ARSENAL
   ================================================================================
-  [L4 - INTERACTION]   :: React.js • Next.js • Vite • Tailwind CSS • Jetpack Compose • Material 3
+  [L4 - INTERFACE]     :: React.js • Next.js • Vite • Tailwind CSS • Jetpack Compose • Material 3
   [L3 - INTERCEPTION]  :: Chrome Manifest V3 • DOM Mutator Engines • Protocol Hooks • CameraX Headless
   [L2 - SERVICES]      :: TypeScript • Node.js • Express.js • MongoDB • MySQL • REST APIs • JWT
-  [L1 - RUNTIMES]      :: Go (Golang) • Rust • Tauri • C/C++ • Kotlin • Linux Bash • Win32 API
+  [L1 - RUNTIME]       :: Go (Golang) • Rust • Tauri • C/C++ • Kotlin • Linux Bash • Win32 API
 ```
 
 <br/>
 
 ---
 
-## 📊 LAYER 05 // LIVE SYSTEM TELEMETRY
+## 🌌 07 // TECHNOLOGY CONSTELLATION & RADAR
 
 <div align="center">
-
-  <!-- DYNAMIC TELEMETRY SVG UPDATED BY GITHUB ACTIONS -->
-  <img src="./assets/telemetry-live.svg" width="100%" alt="Live Telemetry SVG" />
-
-  <br/><br/>
-
-  <!-- METRIC COMPARISONS & REPO INSIGHTS -->
-  <table border="0">
-    <tr>
-      <td width="50%" align="center">
-        <a href="https://github.com/YasirAminBrohi">
-          <img src="https://github-readme-stats.vercel.app/api?username=YasirAminBrohi&show_icons=true&theme=tokyonight&hide_border=false&border_color=00f0ff&bg_color=070b14&title_color=00f0ff&icon_color=ff007f&text_color=9cb4ce" alt="GitHub Stats" width="95%" />
-        </a>
-      </td>
-      <td width="50%" align="center">
-        <a href="https://github.com/YasirAminBrohi">
-          <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=YasirAminBrohi&layout=compact&theme=tokyonight&hide_border=false&border_color=00f0ff&bg_color=070b14&title_color=00f0ff&text_color=9cb4ce" alt="Top Languages" width="95%" />
-        </a>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="2" align="center">
-        <a href="https://github.com/YasirAminBrohi">
-          <img src="https://github-readme-streak-stats.herokuapp.com/?user=YasirAminBrohi&theme=tokyonight&hide_border=false&border_color=00f0ff&background=070b14&stroke=00f0ff&ring=ff007f&fire=ff007f&currStreakLabel=00f0ff" alt="Streak Stats" width="98%" />
-        </a>
-      </td>
-    </tr>
-  </table>
-
+  <img src="./assets/technology-orbit.svg" width="100%" alt="Technology Constellation Radar" />
 </div>
 
 <br/>
 
 ---
 
-## 📡 LAYER 06 // SECURE UPLINK CHANNELS
+## 📊 08 // LIVE SYSTEM TELEMETRY
+
+<div align="center">
+  <!-- DYNAMIC TELEMETRY SVG UPDATED VIA GITHUB ACTIONS CRON -->
+  <img src="./assets/telemetry-live.svg" width="100%" alt="Live Telemetry HUD" />
+</div>
+
+<br/>
+
+---
+
+## 📈 09 // ACTIVITY SIGNAL WAVEFORM
+
+<div align="center">
+  <img src="./assets/activity-signal.svg" width="100%" alt="Activity Signal Waveform" />
+</div>
+
+<br/>
+
+---
+
+## 📡 10 // SECURE UPLINK CHANNELS
 
 <div align="center">
 
@@ -255,7 +286,7 @@ export const Operator: DeveloperProfile = {
 
   <br/><br/>
 
-  <!-- FOOTER SVG TERMINAL -->
+  <!-- FOOTER TERMINAL SVG -->
   <img src="./assets/footer-uplink.svg" width="100%" alt="Footer Uplink" />
 
 </div>

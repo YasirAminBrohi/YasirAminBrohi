@@ -1,35 +1,72 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 140" width="100%" height="100%">
+<svg width="950" height="130" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 130">
+  
   <defs>
-    <linearGradient id="fBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#05080e"/>
-      <stop offset="100%" stop-color="#090f1a"/>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#0F1D30" stroke-width="1" opacity="0.8"/>
+    </pattern>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <linearGradient id="grad-title" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F0FF" />
+      <stop offset="50%" stop-color="#7B2FFF" />
+      <stop offset="100%" stop-color="#FF007F" />
     </linearGradient>
-    <linearGradient id="fLine" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#FF007F"/>
-      <stop offset="50%" stop-color="#00F0FF"/>
-      <stop offset="100%" stop-color="#00FF88"/>
+    <linearGradient id="grad-end" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF007F" />
+      <stop offset="50%" stop-color="#00F0FF" />
+      <stop offset="100%" stop-color="#00FF88" />
     </linearGradient>
-    <style>
-      .mono { font-family: 'Fira Code', monospace; }
-      @keyframes blinkCursor { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
-      .cursor { animation: blinkCursor 1s step-end infinite; }
-    </style>
+    <linearGradient id="orbitGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F0FF" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#7B2FFF" stop-opacity="0.2"/>
+    </linearGradient>
   </defs>
+  <style>
+    text { font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace; }
+    .scanline { animation: scan 6s linear infinite; }
+    @keyframes scan {
+      0% { transform: translateY(-50px); opacity: 0; }
+      10% { opacity: 0.5; }
+      90% { opacity: 0.5; }
+      100% { transform: translateY(600px); opacity: 0; }
+    }
+    .pulseBeam { stroke-dasharray: 100 900; animation: dash 4s linear infinite; }
+    @keyframes dash {
+      from { stroke-dashoffset: 1000; }
+      to { stroke-dashoffset: 0; }
+    }
+    .blinkDot { animation: blink 1.5s ease-in-out infinite alternate; }
+    @keyframes blink { 0% { opacity: 0.2; } 100% { opacity: 1; } }
+    .pulseNode { animation: pulseRadius 2s ease-in-out infinite alternate; }
+    @keyframes pulseRadius { 0% { r: 16; } 100% { r: 20; } }
+    .titleGlow { animation: drop 3s infinite alternate; }
+    @keyframes drop {
+      0% { filter: drop-shadow(0px 0px 5px rgba(0,240,255,0.4)); }
+      100% { filter: drop-shadow(0px 0px 10px rgba(123,47,255,0.6)); }
+    }
+  </style>
 
-  <rect width="950" height="140" rx="10" fill="url(#fBg)" stroke="#142033" stroke-width="1.2"/>
-  <path d="M 30 20 L 920 20" stroke="url(#fLine)" stroke-width="2"/>
-
-  <g transform="translate(475, 60)" text-anchor="middle">
-    <text class="mono" font-size="14" font-weight="700" fill="#00F0FF" letter-spacing="2">
-      // TRANSMISSION TERMINAL: STANDBY FOR COMMANDS
-    </text>
-    <text y="30" class="mono" font-size="11" fill="#6B88A6" letter-spacing="1">
-      STATUS: LISTENING ON PORT 443 <tspan fill="#00FF88" class="cursor">█</tspan>
-    </text>
+  <rect width="950" height="130" fill="#0A1628" rx="8"/>
+  <rect width="950" height="130" fill="url(#grid)" rx="8" opacity="0.6"/>
+  
+    <!-- Corner Brackets -->
+    <path d="M 15 35 L 15 15 L 35 15" fill="none" stroke="#00F0FF" stroke-width="2" filter="url(#glow)"/>
+    <path d="M 915 15 L 935 15 L 935 35" fill="none" stroke="#00F0FF" stroke-width="2" filter="url(#glow)"/>
+    <path d="M 15 95 L 15 115 L 35 115" fill="none" stroke="#00F0FF" stroke-width="2" filter="url(#glow)"/>
+    <path d="M 915 115 L 935 115 L 935 95" fill="none" stroke="#00F0FF" stroke-width="2" filter="url(#glow)"/>
+    
+  
+  <rect x="0" y="0" width="950" height="2" fill="url(#grad-end)"/>
+  
+  <text x="475" y="60" fill="#00F0FF" font-size="16" font-weight="bold" text-anchor="middle" filter="url(#glow)">// END_TRANSMISSION: UPLINK CHANNELS STANDBY</text>
+  
+  <g transform="translate(475, 85)">
+    <text x="-15" y="0" fill="#7E9EB8" font-size="12" text-anchor="middle">STATUS: LISTENING ON PORT 443</text>
+    <rect x="110" y="-10" width="10" height="12" fill="#00FF88" class="blinkDot"/>
   </g>
-
-  <g class="mono" font-size="9" fill="#3A526E">
-    <text x="30" y="120">HASH: 0x7F_YASIR_BROHI_NUCES</text>
-    <text x="750" y="120">DISTRIBUTED BY GITHUB ENGINE</text>
-  </g>
+  
+  <text x="45" y="115" fill="#3D5675" font-size="10">HASH: 0x9F4B2C_VALIDATED</text>
+  <text x="905" y="115" fill="#3D5675" font-size="10" text-anchor="end">ATTRIBUTION: SYS_CORE_MAINFRAME</text>
 </svg>
